@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="botao.svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4185">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4187" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop4189" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4127">
+      <stop
+         style="stop-color:#333333;stop-opacity:1;"
+         offset="0"
+         id="stop4129" />
+      <stop
+         style="stop-color:#333333;stop-opacity:0;"
+         offset="1"
+         id="stop4131" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4117">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4119" />
+      <stop
+         id="stop4125"
+         offset="0.5"
+         style="stop-color:#000000;stop-opacity:0.49803922;" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop4121" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4127"
+       id="linearGradient4133"
+       x1="118.54554"
+       y1="47.985508"
+       x2="132.96251"
+       y2="104.9091"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-1.0187668,-31.072386)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4127-7"
+       id="linearGradient4133-6"
+       x1="78.686287"
+       y1="58.300522"
+       x2="253.17699"
+       y2="59.446636"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-1.0187668,-31.072386)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4127-7">
+      <stop
+         style="stop-color:#333333;stop-opacity:1;"
+         offset="0"
+         id="stop4129-5" />
+      <stop
+         style="stop-color:#333333;stop-opacity:0;"
+         offset="1"
+         id="stop4131-3" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4185"
+       id="linearGradient4191"
+       x1="123.51203"
+       y1="51.551189"
+       x2="139.20245"
+       y2="104.27237"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4127-0"
+       id="linearGradient4133-1"
+       x1="118.54554"
+       y1="47.985508"
+       x2="132.96251"
+       y2="104.9091"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-1.0187668,-31.072386)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4127-0">
+      <stop
+         style="stop-color:#333333;stop-opacity:1;"
+         offset="0"
+         id="stop4129-7" />
+      <stop
+         style="stop-color:#333333;stop-opacity:0;"
+         offset="1"
+         id="stop4131-6" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.438822"
+     inkscape:cx="259.41592"
+     inkscape:cy="890.96365"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="964"
+     inkscape:window-x="-2"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g4552"
+       transform="matrix(2.2128513,0,0,1.753915,-128.13163,-2.7702772)"
+       inkscape:export-filename="/home/ramon/dwhelper/Desenvolvimento de Jogos com HTML5/imagens/botao1.png"
+       inkscape:export-xdpi="88"
+       inkscape:export-ydpi="88">
+      <rect
+         transform="scale(1,-1)"
+         ry="13.603835"
+         y="-41.90723"
+         x="78.489067"
+         height="27.20767"
+         width="95.44693"
+         id="rect4115-0"
+         style="fill:#999999;fill-opacity:1" />
+      <rect
+         ry="11.622799"
+         y="15.605337"
+         x="78.665405"
+         height="23.245598"
+         width="93.285797"
+         id="rect4115"
+         style="fill:url(#linearGradient4133);fill-opacity:1;stroke:#ffcc00;stroke-width:1.9957788;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4193"
+         y="32.123642"
+         x="103.2917"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffcc00;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+         xml:space="preserve"><tspan
+           y="32.123642"
+           x="103.2917"
+           id="tspan4195"
+           sodipodi:role="line">Play</tspan></text>
+    </g>
+    <g
+       id="g4558"
+       transform="matrix(2.2128513,0,0,1.753915,-128.13163,-2.7702772)"
+       inkscape:export-filename="/home/ramon/dwhelper/Desenvolvimento de Jogos com HTML5/imagens/botao2.png"
+       inkscape:export-xdpi="88"
+       inkscape:export-ydpi="88">
+      <rect
+         transform="scale(1,-1)"
+         ry="12.793411"
+         y="-72.746391"
+         x="77.261909"
+         height="25.586823"
+         width="95.266838"
+         id="rect4115-0-1"
+         style="fill:#999999;fill-opacity:1" />
+      <rect
+         ry="11.622799"
+         y="47.314449"
+         x="77.519302"
+         height="23.245598"
+         width="93.285797"
+         id="rect4115-5"
+         style="fill:url(#linearGradient4191);fill-opacity:1;stroke:#ffff00;stroke-width:1.9957788;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4193-9"
+         y="63.832756"
+         x="102.1456"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffff00;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+         xml:space="preserve"><tspan
+           y="63.832756"
+           x="102.1456"
+           id="tspan4195-8"
+           sodipodi:role="line">Play</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;font-family:Ikarus;-inkscape-font-specification:Ikarus Bold"
+       x="40.183334"
+       y="169.55894"
+       id="text3020"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/ramon/dwhelper/Desenvolvimento de Jogos com HTML5/imagens/3.png"
+       inkscape:export-xdpi="88"
+       inkscape:export-ydpi="88"><tspan
+         sodipodi:role="line"
+         id="tspan3022"
+         x="40.183334"
+         y="169.55894">3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#d40000;fill-opacity:1;stroke:none;font-family:Ikarus;-inkscape-font-specification:Ikarus Bold"
+       x="113.8944"
+       y="169.55894"
+       id="text3024"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/ramon/dwhelper/Desenvolvimento de Jogos com HTML5/imagens/2.png"
+       inkscape:export-xdpi="88"
+       inkscape:export-ydpi="88"><tspan
+         sodipodi:role="line"
+         id="tspan3026"
+         x="113.8944"
+         y="169.55894">2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#d40000;fill-opacity:1;stroke:none;font-family:Ikarus;-inkscape-font-specification:Ikarus Bold"
+       x="184.24547"
+       y="169.63895"
+       id="text3028"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/ramon/dwhelper/Desenvolvimento de Jogos com HTML5/imagens/1.png"
+       inkscape:export-xdpi="88"
+       inkscape:export-ydpi="88"><tspan
+         sodipodi:role="line"
+         id="tspan3030"
+         x="184.24547"
+         y="169.63895">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#d40000;fill-opacity:1;stroke:none;font-family:Ikarus;-inkscape-font-specification:Ikarus Bold"
+       x="239.27655"
+       y="169.55894"
+       id="text3032"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/ramon/dwhelper/Desenvolvimento de Jogos com HTML5/imagens/0.png"
+       inkscape:export-xdpi="88"
+       inkscape:export-ydpi="88"><tspan
+         sodipodi:role="line"
+         id="tspan3034"
+         x="239.27655"
+         y="169.55894">0</tspan></text>
+  </g>
+</svg>

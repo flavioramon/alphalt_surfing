@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Asphalt Surfing</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    </head>
+
+    <body style="background:rgb(0,0,0);">
+        <canvas id="tela" width="640" height="480">
+	    Sem suporte	ao elemento canvas
+	</canvas>
+
+	<audio id="som1" control loop>
+            <source src="sons/musica.mp3"/>
+            <source src="sons/musica.ogg"/>
+            <source src="sons/musica.wav"/>
+	</audio>
+
+	<audio id="som2">
+            <source src="sons/efeito.mp3"/>
+            <source src="sons/efeito.ogg"/>
+            <source src="sons/efeito.wav"/>
+	</audio>
+
+	<audio id="som3">
+	    <source src="sons/batida.mp3"/>
+	    <source src="sons/batida.ogg"/>
+	    <source src="sons/batida.wav"/>
+        </audio>
+
+	<audio id="som4">
+	    <source src="sons/colisao.mp3"/>
+	    <source src="sons/colisao.ogg"/>
+	    <source src="sons/colisao.wav"/>
+        </audio>
+
+	<script>
+            var tela = document.getElementById("tela");
+	    var pincel = tela.getContext("2d");
+
+	    var musica = document.getElementById("som1");
+	    //musica.addEventListener("ended",function(){ musica.currentTime = 0; musica.play(); }, false);
+	    var efeito = document.getElementById("som2");
+	    var batida = document.getElementById("som3");
+	    var colisao = document.getElementById("som4");
+
+	    //carrega a imgem do menu
+	    var imageMenu = new Image();
+	    imageMenu.src = "imagens/menu.png";
+
+	    //carrega a imagem do botao1.png
+	    var botao1 = new Image();
+	    botao1.src = "imagens/botao1.png";
+
+	    //carrega a imagem do botao2.png
+	    var botao2 = new Image();
+	    botao2.src = "imagens/botao2.png";
+	               
+	    //carrega a imagem fundo1.jpg
+	    var imagemRua1 = new Image();
+	    imagemRua1.src = "imagens/fundo1.jpg";
+
+	    //carrega a imagem fundo2.jpg
+	    var imagemRua2 = new Image();
+	    imagemRua2.src = "imagens/fundo2.jpg";
+
+	    //carrega a imagem skatista.png
+	    var skate = new Image();
+	    skate.src = "imagens/skatista.png";
+
+	    //Carrega a imagem placar.png
+	    var placar = new Image();
+	    placar.src = "imagens/placar.png";
+
+	    //Carrega a imagem cone.png
+	    var cone = new Image();
+	    cone.src = "imagens/cone.png";
+
+	    //Carrega a imagem pneu.png
+	    var pneu = new Image();
+	    pneu.src = "imagens/pneu.png";
+
+	    //Carrega a imagem tronco.png
+	    var tronco = new Image();
+	    tronco.src = "imagens/tronco.png";
+
+	    //carrega a imgem do menu gameover
+	    var imageFim1 = new Image();
+	    imageFim1.src = "imagens/gameover1.png";
+	    
+	    //carrega a imgem do menu gameover
+	    var imageFim2 = new Image();
+	    imageFim2.src = "imagens/gameover2.png";
+	    
+	    //carrega a imgem do menu gameover
+	    var imageFim3 = new Image();
+	    imageFim3.src = "imagens/gameover3.png";
+	    
+	    //carrega a imgem do número
+	    var image0 = new Image();
+	    image0.src = "imagens/0.png";
+
+	    //carrega a imgem do número
+	    var image1 = new Image();
+	    image1.src = "imagens/1.png";
+
+	    //carrega a imgem do número
+	    var image2 = new Image();
+	    image2.src = "imagens/2.png";
+
+	    //carrega a imgem do número
+	    var image3 = new Image();
+	    image3.src = "imagens/3.png";
+
+	    var y1 = 0;
+	    var y2 = 480;
+	    var x_skate = 200;
+	    var y_skate = 40;
+	    var larg_skate = 25;
+	    var altu_skate = 95;
+	    var x_cone = 350;
+	    var y_cone = 480;
+	    var larg_cone = 44;
+	    var altu_cone = 45;
+	    var x_pneu = 440;
+	    var y_pneu = 800;
+	    var larg_pneu = 80;
+	    var altu_pneu = 81;
+	    var x_tronco = 200;
+	    var y_tronco = 500;
+	    var larg_tronco = 145;
+	    var altu_tronco = 45;
+	    var esquerda = false;
+	    var direita = false;
+	    var bateu = false;
+	    var bateu_obj = false;
+	    var btselecionado = false;
+	    var velo = 0;
+	    var dist = 0;
+	    var temp = 0;
+	    var pont = 0;
+	    var cont = 3;
+	    var tela = 0; //menu = 0; contagem = 1; jogo = 2; fim = 3; 
+	    var recorde = 0;
+	    //ler o valor recorde armazenado no navegador
+            var recorde_texto = localStorage.getItem("pontos");
+
+            function gravarRecorde(valor){
+	        //grava o valor da pontuação no navegador
+		localStorage.setItem("pontos", valor);
+	    }
+
+            function contRegressiva(){
+	        //desenha a rua ao fundo
+                pincel.drawImage(imagemRua1, 0, y1);
+
+		//desenha a rua ao fundo
+		pincel.drawImage(imagemRua2, 0, y2);
+		
+		//desenha o skatista
+		pincel.drawImage(skate, x_skate, y_skate);
+
+		//desenha o placar
+		pincel.drawImage(placar, 5, 10);
+
+	        //texto do placar
+	        pincel.fillText("Distância: " + dist + " m" , 24, 30);	
+	        pincel.fillText("Tempo: " + temp + " seg", 24, 57);	
+	        pincel.fillText("Pontos: " + pont, 24, 83);
+	        pincel.fillText("Recorde: " + recorde_texto, 24, 110);	
+	        
+		if(cont == 3){
+	            pincel.drawImage(image3, 305, 240);
+		}else if(cont == 2){
+	            pincel.drawImage(image2, 305, 240);
+		}else if(cont == 1){
+	            pincel.drawImage(image1, 315, 240);
+		}else if(cont == 0){
+	            pincel.drawImage(image0, 305, 240);
+		} 
+	    }
+
+            function colisaoCone(){
+                if( (x_cone + larg_cone) > x_skate &&
+		x_cone < (x_skate + larg_skate) &&
+		(y_cone + altu_cone) > y_skate &&
+		y_cone < (y_skate + altu_skate) ){
+		    //colídio com o skate
+		    bateu_obj = true;
+                    return true;
+		}
+		else{
+		    bateu_obj = false;
+		    return false;
+		}
+            }
+
+            function colisaoPneu(){
+                if( (x_pneu + larg_pneu) > x_skate &&
+		x_pneu < (x_skate + larg_skate) &&
+		(y_pneu + altu_pneu) > y_skate &&
+		y_pneu < (y_skate + altu_skate) ){
+		    //colídio com o skate
+		    bateu_obj = true;
+                    return true;
+		}
+		else{
+		    bateu_obj = false;
+		    return false;
+		}
+            }
+
+            function colisaoTronco(){
+                if( (x_tronco + larg_tronco) > x_skate &&
+		x_tronco < (x_skate + larg_skate) &&
+		(y_tronco + altu_tronco) > y_skate &&
+		y_tronco < (y_skate + altu_skate) ){
+		    //colídio com o skate
+		    bateu_obj = true;
+                    return true;
+		}
+		else{
+		    bateu_obj = false;
+		    return false;
+		}
+            }
+
+            window.onmousemove = exibeCoordenadaMove;
+	    function exibeCoordenadaMove(coord){
+	        if((coord.pageX > 59 && coord.pageX < 260) && (coord.pageY > 229 && coord.pageY < 269) && (tela == 0)){
+		    btselecionado = true;
+		}
+		else if(tela == 0){
+                    btselecionado = false;
+		}
+	    }
+
+	    window.onmouseup = exibeCoordenada;
+	    function exibeCoordenada(coord){
+	        if((coord.pageX > 59 && coord.pageX < 260) && (coord.pageY > 229 && coord.pageY < 269) && (tela == 0)){
+                    //configuração do texto do placar
+	            pincel.font = "15px arial";
+    	            pincel.fillStyle = "rgb(60, 41, 11)";
+
+	            //zera as variáveis do placar
+	            dist = 0;
+	            temp = 0;
+                    pont = 0;
+                   
+                    //atualiza a variável recorde_texto
+                    recorde_texto = localStorage.getItem("pontos");		    
+		    contRegressiva();
+	                    
+		    //contagem
+	            tela = 1;		    
+		}
+		else if(tela == 3){
+		    //menu
+		    tela = 0;
+		}
+	    }
+
+            window.onkeydown = moverSurfista;
+	    function moverSurfista(tecla){
+                if(tecla.keyCode == 37){
+                    esquerda = true;
+		    direita = false;
+		}
+		if(tecla.keyCode == 39){
+                    esquerda = false;
+		    direita = true;
+		}
+	    }
+
+            window.onkeyup = soltarTecla;
+	    function soltarTecla(tecla){
+                esquerda = false;
+	        direita = false;   	
+	    }
+
+            function gameloop(){
+		//contador de loops
+	        velo++;
+
+                if(tela == 0){
+		    //desenha o menu
+                    pincel.drawImage(imageMenu, 0, 0);
+
+		    if(btselecionado == false){
+		        //desenha o botao1
+		        pincel.drawImage(botao1, 50, 220);
+	            }
+		    else{
+		        //desenha o botao2
+	                pincel.drawImage(botao2, 50, 220);
+		    }
+	        }
+		else if(tela == 1){
+	            //executa a cada 1 segundo
+		    if(velo % 20 == 0){
+	                cont--;
+                        if(cont > -1){
+			    contRegressiva();
+		        }
+		        else if(cont == -1){
+			    //toca a musica 
+                            musica.play();
+                        
+			    //jogo
+			    tela = 2;
+
+		            //reinicia o contador
+                            cont = 3;
+		        }
+		    }
+		}
+	        else if(tela == 2){
+		    //desenha a rua ao fundo
+                    pincel.drawImage(imagemRua1, 0, y1);
+
+		    //desenha a rua ao fundo
+		    pincel.drawImage(imagemRua2, 0, y2);
+		
+		    //desenha o cone
+		    pincel.drawImage(cone, x_cone, y_cone);
+
+		    //desenha o pneu
+		    pincel.drawImage(pneu, x_pneu, y_pneu);
+
+		    //desenha o tronco
+		    pincel.drawImage(tronco, x_tronco, y_tronco);
+
+		    //desenha o skatista
+		    pincel.drawImage(skate, x_skate, y_skate);
+
+		    //desenha o placar
+		    pincel.drawImage(placar, 5, 10);
+
+		    //texto do placar
+	            pincel.fillText("Distância: " + dist + " m" , 24, 30);	
+	            pincel.fillText("Tempo: " + temp + " seg", 24, 57);	
+	            pincel.fillText("Pontos: " + pont, 24, 83);	
+	            pincel.fillText("Recorde: " + recorde_texto, 24, 110);	
+		
+	            //move o skatista
+	            if(esquerda == true){
+                        x_skate = x_skate - 10;
+	            }
+	            if(direita == true){
+                        x_skate = x_skate + 10;
+		    }	
+                    
+		    if(x_skate < 120 || x_skate > 499){
+			bateu = true;
+	                batida.play();
+		    }
+
+		    if(bateu == true){
+		        //move o fundo para cima
+		        y1 = y1 - 5;
+			y_cone = y_cone - 5;
+			y_pneu = y_pneu - 5;
+			y_tronco = y_tronco - 5;
+		        y2 = y2 - 5;
+
+                        if(velo % 20 == 0){
+			    cont--;
+
+			    if(cont == 0){
+                                bateu = false;
+				cont = 3;
+			    }
+			}
+		    }
+		    else if(colisaoCone() == true){
+		        //move o fundo para cima
+		        y1 = y1 - 5;
+			y_cone = y_cone - 5;
+			y_pneu = y_pneu - 5;
+			y_tronco = y_tronco - 5;
+		        y2 = y2 - 5;
+	                batida.play();
+			//colisao.play();
+		    }
+		    else if(colisaoPneu() == true){
+		        //move o fundo para cima
+		        y1 = y1 - 5;
+			y_cone = y_cone - 5;
+			y_pneu = y_pneu - 5;
+			y_tronco = y_tronco - 5;
+		        y2 = y2 - 5;
+	                batida.play();
+			//colisao.play();
+		    }
+		    else if(colisaoTronco() == true){
+		        //move o fundo para cima
+		        y1 = y1 - 5;
+			y_cone = y_cone - 5;
+			y_pneu = y_pneu - 5;
+			y_tronco = y_tronco - 5;
+		        y2 = y2 - 5;
+	                batida.play();
+			//colisao.play();
+		    }
+                    else{
+		        //move o fundo para cima
+		        y1 = y1 - 10;
+			y_cone = y_cone - 10;
+			y_pneu = y_pneu - 10;
+			y_tronco = y_tronco - 10;
+		        y2 = y2 - 10;
+		    }
+
+		    if(y1 < -480){
+		        y1 = 480;
+		    }
+
+		    if(y2 < -480){
+		        y2 = 480;
+			//posiciona o cone no local aleatório da pista
+			y_cone = Math.floor( (Math.random()*(820 - 480)) + 480);
+			//posiciona o pneu no local aleatório da pista
+			y_pneu = Math.floor( (Math.random()*(880 - 480)) + 480);
+			//posiciona o tronco no local aleatório da pista
+			y_tronco = Math.floor( (Math.random()*(900 - 480)) + 480);
+			//posiciona o cone no local aleatório da pista
+			x_cone = Math.floor( (Math.random()*(499 - 122)) + 122);
+			//posiciona o pneu no local aleatório da pista
+			x_pneu = Math.floor( (Math.random()*(440 - 122)) + 122);
+			//posiciona o tronco no local aleatório da pista
+			x_tronco = Math.floor( (Math.random()*(380 - 122)) + 122);
+		    }
+               
+		    if(dist > 501){
+			//fim
+		        tela = 3;
+		    }    //executa a cada 0.5 segundo
+		    else if(velo % 10 == 0){
+			if(bateu_obj == true && velo % 20 == 0){
+	    	           dist += 1;
+			}
+		        else if(bateu == true && velo % 20 == 0){
+	    	           dist += 1;
+			}
+		        else if(bateu == false){
+			   dist += 1;    
+			}	
+			temp += 0.5;
+                        //a cada 100 metros percorrido
+			if(dist % 100 == 0){
+			    pont += Math.floor(dist - temp);
+			    efeito.play();
+			}
+
+                        //jogo
+		        tela = 2;
+		    }    //executa a cada 0.5 segundo
+		}
+		else if(tela == 3){
+		    //Para a música
+		    musica.pause();
+
+		    if(recorde_texto != null){
+                        recorde = parseInt(recorde_texto);   
+	            }
+
+                    //console.log("recorde_txt = "+recorde_texto+" "+typeof(recorde_texto));
+                    //console.log("recorde = "+recorde+" "+typeof(recorde));
+                    //console.log("pontuação = "+pont+" "+typeof(pont));
+
+		    if(pont == recorde){
+	                //grava o valor da pontuação no navegador
+		        gravarRecorde(pont);
+
+		        //desenha o menu gameover
+                        pincel.drawImage(imageFim1, 0, 0);
+		    }
+		    else if(pont > recorde){
+	                //grava o valor da pontuação no navegador
+		        gravarRecorde(pont);
+
+		        //desenha o menu gameover
+                        pincel.drawImage(imageFim2, 0, 0);
+		    }
+		    else{
+		        //desenha o menu gameover
+                        pincel.drawImage(imageFim3, 0, 0);
+		    }
+
+		    //texto do painel
+	            pincel.font = "30px arial";
+    	            pincel.fillStyle = "rgb(0, 0, 0)";
+
+		    //calcula velocidade média
+		    var vel_media = Math.floor(dist / temp);
+		    pincel.fillText("Recorde: " + recorde_texto, 40, 420);
+		    pincel.fillText("Pontuação: " + pont, 40, 460);
+		    pincel.fillText("Distância: " + dist + " m", 360, 420);
+		    pincel.fillText("Vel. Média: " + vel_media + " m/s", 360, 460);
+		}
+	    }
+            window.setInterval("gameloop()", 30);
+            //window.setInterval("gameloop()", 50);
+
+	</script>
+    </body>
+</html>
